@@ -9,29 +9,47 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "zJexBJwORvFnnOBCA",
+      });
+   })();
+  </script>
 </head>
 
 <body>
   <!-- Logo and Navigation -->
-  <nav>
-    <div class="container">
-      <img src="assets/LOGO.jpg" alt="M M Logo" class="logo">
-      <ul>
-        <li>
-          <a href="#home">home</a>
-        </li>
-        <li>
-          <a href="#about">about</a>
-        </li>
-        <li>
-          <a href="#work">work</a>
-        </li>
-        <li>
-          <a href="#contact">contact</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <header>
+        <nav class="navbar">
+          <div class="container">
+          <img src="assets/LOGO.jpg" alt="M M Logo" class="logo">
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="#home" class="nav-link">home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#about" class="nav-link">about</a>
+            </li>
+            <li class="nav-item">
+              <a href="#work" class="nav-link">work</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link">contact</a>
+            </li>
+          </ul>
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          </div>
+        </nav>
+  </header>
+
 
   <!-- Hero Section -->
   <section id="home" class="hero">
@@ -106,19 +124,25 @@
       </div>
     </div>
   </div>
-</section>
+</section> 
 
-
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Let's create together!</h2>
-      <form>
-        <input type="text" placeholder="Prefered name" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Your message" required></textarea>
-        <button type="submit" class="button">Send</button>
-      </form>
-    </div>
+<section id="contact" class="container">
+  <h2>let's create together!</h2>
+    <form id="email-form">
+      <div class="form-group">
+        <label for="name">name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="button">send</button>
+    </form>
   </section>
 
   <footer>
@@ -137,6 +161,6 @@
     <p>&copy; 2025 Mercedes Mendez. All rights reserved.</p>
   </div>
 </footer>
-
+<script src="app.js"></script>
 </body>
 </html>
